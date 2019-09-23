@@ -14,7 +14,7 @@ public class Sightings implements AnimalInterface{
         if (name.equals("")) {
             throw new IllegalArgumentException("Please enter a name mate");
         }
-        //Exception for location
+
         if (location.equals("")) {
             throw new IllegalArgumentException("Please enter a location mate");
         }
