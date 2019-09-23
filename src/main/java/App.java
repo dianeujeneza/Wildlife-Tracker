@@ -55,14 +55,14 @@ public class App {
             List<Animal> allAnimal= Animal.all();
             model.put("sightings", allSightings);
             model.put("animal", allAnimal);
-            return new ModelAndView(model, "myview.hbs");
+            return new ModelAndView(model, "view.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/view", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("sightings", Sightings.all());
             model.put("animal", Animal.all());
-            return new ModelAndView(model, "myview.hbs");
+            return new ModelAndView(model, "view.hbs");
         }, new HandlebarsTemplateEngine());
 
 
