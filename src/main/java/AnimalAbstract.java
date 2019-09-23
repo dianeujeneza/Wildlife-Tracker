@@ -11,17 +11,14 @@ public class AnimalAbstract {
         return name;
     }
 
-    //Method to get Age of Animal
     public String getAge() {
         return age;
     }
 
-    //Method to get health of animal
     public String getHealth() {
         return health;
     }
 
-    //Method to get Type0
     public String getType() {
         return type;
     }
@@ -43,7 +40,6 @@ public class AnimalAbstract {
                 this.getHealth().equals(myAnimal.getHealth());
     }
 
-    //Method for saving
     public void save() {
         try (org.sql2o.Connection con = DB.sql2o.open()) {
             String sql = "INSERT INTO animal (name, age, health, type) VALUES (:name, :age, :health, :type);";
@@ -59,7 +55,6 @@ public class AnimalAbstract {
 
     }
 
-    //Method to Find Id
     public static AnimalAbstract find(int id) {
         String sql = "SELECT * FROM animal WHERE id = :id;";
         try (Connection con = DB.sql2o.open()) {
