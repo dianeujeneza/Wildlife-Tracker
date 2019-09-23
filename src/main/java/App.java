@@ -7,8 +7,6 @@ import java.util.Map;
 
 import static spark.Spark.*;
 
-//    public static void main(String[] args){
-//        staticFileLocation("/public");
 public class App {
     static int getHerokuAssignedPort() {
         ProcessBuilder processBuilder = new ProcessBuilder();

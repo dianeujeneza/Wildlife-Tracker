@@ -8,37 +8,54 @@
     <br>
     <form action="/view" method="post">
         <h2>Animal Sighting</h2>
+        <hr>
         <div class="form-group">
             <label for="rangerName">Ranger's Name</label>
             <input type="text" id="rangerName" name="rangerName">
         </div>
-        <hr>
-        <p>Location of Sighting</p>
-        <select name="sightingLocation" id="sightingLocation">
-            <option value="Zone1">North</option>
-            <option value="Zone2">South</option>
-            <option value="Zone3">East</option>
-            <option value="Zone4">West</option>
-            <option value="Zone5">Central</option>
-        </select>
-        <hr>
+        <div class="form-group">
+            <label>Location of Sighting</label>
+            <select name="sightingLocation" id="sightingLocation">
+                <option selected>Choose..</option>
+                <option value="Zone1">North</option>
+                <option value="Zone2">South</option>
+                <option value="Zone3">East</option>
+                <option value="Zone4">West</option>
+                <option value="Zone5">Central</option>
+            </select>
+        </div>
+
         <div class="form-group">
             <label for="animalName">Animal Name</label>
             <input type="text" id="animalName" name="animalName">
         </div>
-        <select name="animalAge" id="animalAge">
-            <option value="newborn">Newborn</option>
-            <option value="young">Young</option>
-            <option value="adult">Adult</option>
-        </select>
-        <select name="animalHealth" id="animalHealth">
-            <option value="weak">Weak</option>
-            <option value="healthy">Healthy</option>
-        </select>
-        <select name="animalType" id="animalType">
-            <option value="safe">Safe</option>
-            <option value="endangered">Endangered</option>
-        </select>
+        <div class="form-group">
+            <label>Animal's Age</label>
+            <select name="animalAge" id="animalAge">
+                <option selected>Choose..</option>
+                <option value="newborn">Newborn</option>
+                <option value="young">Young</option>
+                <option value="adult">Adult</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Animal's Health</label>
+            <select name="animalHealth" id="animalHealth">
+                <option selected>Choose..</option>
+                <option value="weak">Weak</option>
+                <option value="healthy">Healthy</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Animal's Type</label>
+            <select name="animalType" id="animalType">
+                <option selected>Choose..</option>
+                <option value="safe">Safe</option>
+                <option value="endangered">Endangered</option>
+            </select>
+        </div>
         <button type="submit" class="btn btn-success" id="button">Submit</button>
     </form>
 {{/partial}}
