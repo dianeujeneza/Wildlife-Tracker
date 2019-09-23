@@ -1,9 +1,7 @@
-import org.junit.Test;
 import org.junit.rules.ExternalResource;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
-import static org.junit.Assert.assertEquals;
 
 public class DatabaseRule extends ExternalResource {
     @Override
