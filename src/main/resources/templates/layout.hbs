@@ -13,21 +13,20 @@
     </head>
     <body>
 
+{{/block}}
+<ul class="nav" id="nav">
+    <li role="presentation" class="active"><a href="/">Home</a></li>
+<!--    <li role="presentation"><a href="/form">Add Animal</a></li>-->
+    <li role="presentation"><a href="/view">View Sightings</a></li>
+</ul>
+<div class="container">
+
     <style>
     body{
            background-image: url(/images/cover.webp);
            background-size: cover;
     }
 </style>
-
-{{/block}}
-<ul class="nav" id="nav">
-    <li role="presentation" class="active"><a href="/">Home</a></li>
-    <li role="presentation"><a href="/form">Add Animal</a></li>
-    <li role="presentation"><a href="/view">View Sightings</a></li>
-</ul>
-<div class="container">
-    <!--begin main template-->
 
     <div class="col-md-12">
         {{#block "content"}}
