@@ -3,6 +3,7 @@ import org.sql2o.Connection;
 import java.util.List;
 
 public class Endangered extends  AnimalAbstract {
+
     private static final String ANIMAL_TYPE = "endangered";
     public Endangered(String name, String age, String health, String type) {
         if (name.equals("")) {
