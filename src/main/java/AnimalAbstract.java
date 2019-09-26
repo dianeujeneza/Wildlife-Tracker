@@ -1,11 +1,11 @@
 import org.sql2o.Connection;
 
-public class AnimalAbstract {
-    protected String name;
-    protected String age;
-    protected String health;
-    protected String type;
-    protected int id;
+public  class AnimalAbstract {
+    public String name;
+    public String age;
+    public String health;
+    public String type;
+    public int id;
 
     public String getName() {
         return name;
@@ -29,9 +29,9 @@ public class AnimalAbstract {
 
     @Override
     public boolean equals(Object otherAnimal) {
-        if (!(otherAnimal instanceof Object)) {
-            return false;
-        }
+//        if (!(otherAnimal instanceof Object)) {
+//            return false;
+//        }
         AnimalAbstract myAnimal = (AnimalAbstract) otherAnimal;
         return this.getName().equals(myAnimal.getName()) &&
                 this.getType().equals(myAnimal.getType()) &&

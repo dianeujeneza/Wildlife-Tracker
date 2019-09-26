@@ -14,19 +14,12 @@
     <body>
 
 {{/block}}
-<ul class="nav" id="nav">
-    <li role="presentation" class="active"><a href="/">Home</a></li>
-    <li role="presentation"><a href="/form">Add Animal</a></li>
-    <li role="presentation"><a href="/view">View Sights</a></li>
+<ul class="nav justify-content-end" id="nav">
+    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="/form">Add Animal</a></li>
+    <li class="nav-item"><a class="nav-link" href="/view">View Sights</a></li>
 </ul>
 <div class="container">
-
-    <style>
-    body{
-           background-image: url(/images/cover.webp);
-           background-size: cover;
-    }
-</style>
 
     <div class="col-md-12">
         {{#block "content"}}

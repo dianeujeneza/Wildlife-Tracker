@@ -43,9 +43,9 @@ public class EndangeredTest {
         SecondEndangeredAnimal.save();
         assertEquals(Endangered.find(SecondEndangeredAnimal.getId()), SecondEndangeredAnimal);
     }
-    //Animal is assigined an Id
+    //Animal is assigned an Id
     @Test
-    public void EndangeredAnimal_AnimalIsAssingnedAnID_getid(){
+    public void EndangeredAnimal_AnimalIsAssignedAnID_getid(){
         Endangered myEndangeredAnimal = new Endangered("panther", "adult", "healthy","endangered");
         myEndangeredAnimal.save();
         Endangered testEndangeredAnimalia = Endangered.all().get(0);

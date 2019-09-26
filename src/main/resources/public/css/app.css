@@ -1,35 +1,33 @@
 #nav{
     list-style: none;
-    /*float: right;*/
     margin-right: 0px;
     margin-top: 30px;
 }
+
 #nav li{
     display: inline-block;
     margin-left: 30px;
     text-transform: uppercase;
 }
+
 #nav li a{
-    color:black;
+    color:white;
     text-decoration: none;
     font-size: 1.3em;
     font-weight: bold;
 }
-#nav li a:hover{
-    background-color: whitesmoke;
-    transition: all 0.5s ease-in;
-    padding: 15px 0;
-    outline: none;
 
-}
+
 h1 {
  color: black;
  text-align:center;
 
 }
 body{
-background-image: url(/images/cover.webp);
+background-image: url(/images/images.jpeg);
  background-size: cover;
+ background-color:rgba(0,0,0,0,1);
+
 }
 input[type=text] {
   width: 100%;

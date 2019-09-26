@@ -1,6 +1,7 @@
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
+import java.time.ZoneOffset;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,7 +47,7 @@ public class App {
             } else if(animalType.equals("endangered")){
                 Endangered endangeredAnimal = new Endangered(animalName, animalAge, animalHealth, animalType);
                 endangeredAnimal.save();
-                Sightings newSighting2 = new Sightings(rangerName, sightingLocation, endangeredAnimal.getId());
+                Sightings newSighting2 = new Sightings(rangerName, sightingLocation,endangeredAnimal.getId());
                 newSighting2.save();
             }
             List<Sightings> allSightings = Sightings.all();
@@ -56,15 +57,15 @@ public class App {
             return new ModelAndView(model, "view.hbs");
         }, new HandlebarsTemplateEngine());
 
+
+
         get("/view", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            model.put("sightings", Sightings.all());
-            model.put("animal", Animal.all());
+            List<Sightings> allSightings = Sightings.all();
+            List<Animal> allAnimal= Animal.all();
+            model.put("sightings", allSightings);
+            model.put("animal", allAnimal);
             return new ModelAndView(model, "view.hbs");
         }, new HandlebarsTemplateEngine());
-
-
-
-
     }
 }

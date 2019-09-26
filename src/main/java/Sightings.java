@@ -11,13 +11,13 @@ public class Sightings implements AnimalInterface{
     private Timestamp timestamp;
     private int id;
     public Sightings(String name, String location, int animalId) {
-        if (name.equals("")) {
-            throw new IllegalArgumentException("Please enter a name mate");
-        }
-
-        if (location.equals("")) {
-            throw new IllegalArgumentException("Please enter a location mate");
-        }
+//        if (name.equals("")) {
+//            throw new IllegalArgumentException("Please enter a name mate");
+//        }
+//
+//        if (location.equals("")) {
+//            throw new IllegalArgumentException("Please enter a location mate");
+//        }
         this.name = name;
         this.location = location;
         this.animalId = animalId;
@@ -65,9 +65,9 @@ public class Sightings implements AnimalInterface{
     }
     @Override
     public boolean equals(Object otherSighting){
-        if(!(otherSighting instanceof Object)){
-            return false;
-        }
+//        if(!(otherSighting instanceof Object)){
+//            return false;
+//        }
         Sightings myAnimal = (Sightings) otherSighting;
         return this.getName().equals(myAnimal.getName())&&
                 this.getLocation().equals(myAnimal.getLocation())&&

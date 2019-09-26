@@ -6,15 +6,16 @@ public class Animal extends AnimalAbstract  {
     private static final String ANIMAL_TYPE = "safe";
     public Animal(String name, String age, String health, String type){
 
-        if (name.equals("")) {
-            throw new IllegalArgumentException("Please enter a name");
-        }
-        if (age.equals("")) {
-            throw new IllegalArgumentException("Please enter the age of the animal");
-        }
-        if (health.equals("")) {
-            throw new IllegalArgumentException("Please enter the health status of the animal");
-        }
+//        if (name.equals("")) {
+//            throw new IllegalArgumentException("Please enter a name");
+//        }
+//        if (age.equals("")) {
+//            throw new IllegalArgumentException("Please enter the age of the animal");
+//        }
+//        if (health.equals("")) {
+//            throw new IllegalArgumentException("Please enter the health status of the animal");
+//        }
+
         this.name = name;
         this.age = age;
         this.health = health;
@@ -22,6 +23,12 @@ public class Animal extends AnimalAbstract  {
 
 
     }
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
     @Override
     public void save(){
         try(Connection con = DB.sql2o.open()){
@@ -37,9 +44,9 @@ public class Animal extends AnimalAbstract  {
     }
     @Override
     public boolean equals(Object otherAnimal){
-        if(!(otherAnimal instanceof Object)){
-            return false;
-        }
+//        if(!(otherAnimal instanceof Object)){
+//            return false;
+//        }
         AnimalAbstract myAnimal = (AnimalAbstract) otherAnimal;
         return this.getName().equals(myAnimal.getName())&&
                 this.getType().equals(myAnimal.getType())&&
