@@ -8,7 +8,7 @@ by displaying them on the screen.
 
 Run `gradle run` for a dev server. Navigate to `http://localhost:4567/`. The app will automatically reload if you change any of the source files.
 ## Setup/Installation Requirements
-Clone the repository to your local machine from the **[online repository]
+Clone the repository to your local machine from the **[online repository]**
 https://github.com/dianeujeneza/Wildlife-Tracker.git
 
 If you already have git and java prerequisites installed in your machine continue to the next step,
