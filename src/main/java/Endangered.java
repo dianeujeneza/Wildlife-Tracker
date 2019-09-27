@@ -23,19 +23,19 @@ public class Endangered extends AnimalAbstract {
                 this.getId()==myAnimal.getId() ;
 
     }
-//    @Override
-//    public void save(){
-//        try(Connection con = DB.sql2o.open()){
-//            String sql = "INSERT INTO animal (name, age, health, type) VALUES (:name, :age, :health, :type);";
-//            this.id = (int) con.createQuery(sql, true)
-//                    .addParameter("name", this.name)
-//                    .addParameter("age", this.age)
-//                    .addParameter("health", this.health)
-//                    .addParameter("type", this.type)
-//                    .executeUpdate()
-//                    .getKey();
-//        }
-//    }
+    @Override
+    public void save(){
+        try(Connection con = DB.sql2o.open()){
+            String sql = "INSERT INTO animal (name, age, health, type) VALUES (:name, :age, :health, :type);";
+            this.id = (int) con.createQuery(sql, true)
+                    .addParameter("name", this.name)
+                    .addParameter("age", this.age)
+                    .addParameter("health", this.health)
+                    .addParameter("type", this.type)
+                    .executeUpdate()
+                    .getKey();
+        }
+    }
     public static List<Endangered> all(){
         String sql = "SELECT * FROM animal WHERE type='endangered'";
         try(org.sql2o.Connection con = DB.sql2o.open()) {
