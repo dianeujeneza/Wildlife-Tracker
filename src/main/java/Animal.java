@@ -13,24 +13,24 @@ public class Animal extends AnimalAbstract  {
 
     }
 
-//    @Override
-//    public int getId() {
-//        return id;
-//    }
-//
-//    @Override
-//    public void save(){
-//        try(Connection con = DB.sql2o.open()){
-//            String sql = "INSERT INTO animal (name, age, health, type) VALUES (:name, :age, :health, :type);";
-//            this.id = (int) con.createQuery(sql, true)
-//                    .addParameter("name", this.name)
-//                    .addParameter("age", this.age)
-//                    .addParameter("health", this.health)
-//                    .addParameter("type", this.type)
-//                    .executeUpdate()
-//                    .getKey();
-//        }
-//    }
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void save(){
+        try(Connection con = DB.sql2o.open()){
+            String sql = "INSERT INTO animal (name, age, health, type) VALUES (:name, :age, :health, :type);";
+            this.id = (int) con.createQuery(sql, true)
+                    .addParameter("name", this.name)
+                    .addParameter("age", this.age)
+                    .addParameter("health", this.health)
+                    .addParameter("type", this.type)
+                    .executeUpdate()
+                    .getKey();
+        }
+    }
     @Override
     public boolean equals(Object otherAnimal){
         if(!(otherAnimal instanceof Object)){
