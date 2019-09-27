@@ -34,7 +34,7 @@ If you are not conversant on the usage of git you can visit https://github.com a
 
 *OUTPUTS:a table of retrieved data from database
 ## Known Bugs
-For now users cant'be able to view the list after inserting informations but they can view them in the database
+Some informations can't be retrieved but this issue will be solved as soon as possible
 ## Technologies Used
 JAVA,SPARK Framework,BOOTSTRAP,POSTGRES
 ## Support and contact details
