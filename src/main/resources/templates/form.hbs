@@ -7,25 +7,10 @@
     <br>
     <br>
     <br>
-    <form action="/view" method="post">
-        <h2>Animal Sighting</h2>
+    <form action="/view" method="post" id="form">
+        <h2>Animals</h2>
         <p>“When it comes to conserving wildlife and the environment, It's more important to be outspoken, than unspoken” </p>
         <hr>
-        <div class="form-group">
-            <label for="rangerName">Ranger's Name</label>
-            <input type="text" id="rangerName" name="rangerName">
-        </div>
-        <div class="form-group">
-            <label>Location of Sighting</label>
-            <select name="sightingLocation" id="sightingLocation">
-                <option selected>Choose..</option>
-                <option value="Zone1">North</option>
-                <option value="Zone2">South</option>
-                <option value="Zone3">East</option>
-                <option value="Zone4">West</option>
-                <option value="Zone5">Central</option>
-            </select>
-        </div>
 
         <div class="form-group">
             <label for="animalName">Animal Name</label>
@@ -45,6 +30,7 @@
             <label>Animal's Health</label>
             <select name="animalHealth" id="animalHealth">
                 <option selected>Choose..</option>
+                <option value="ill">Ill</option>
                 <option value="weak">Weak</option>
                 <option value="healthy">Healthy</option>
             </select>

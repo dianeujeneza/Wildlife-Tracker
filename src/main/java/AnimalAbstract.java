@@ -29,9 +29,9 @@ public  class AnimalAbstract {
 
     @Override
     public boolean equals(Object otherAnimal) {
-//        if (!(otherAnimal instanceof Object)) {
-//            return false;
-//        }
+        if (!(otherAnimal instanceof Object)) {
+            return false;
+        }
         AnimalAbstract myAnimal = (AnimalAbstract) otherAnimal;
         return this.getName().equals(myAnimal.getName()) &&
                 this.getType().equals(myAnimal.getType()) &&
@@ -64,7 +64,5 @@ public  class AnimalAbstract {
             return myAnimal;
 
         }
-
-
     }
 }

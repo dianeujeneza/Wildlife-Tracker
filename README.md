@@ -16,6 +16,14 @@ If you already have git and java prerequisites installed in your machine continu
 If you do not have java in your system you can visit the java dev site and get the installation process and you will find some commands you can use on your terminal.
 
 If you are not conversant on the usage of git you can visit https://github.com and clear guidelines on how to use git are outlined.
+
+#### PostgresSQL for Database
+       * CREATE DATABASE wildlife_tracker;
+       * \c wildlife_tracker;
+       * CREATE TABLE animals (id SERIAL PRIMARY KEY, ranger_name VARCHAR, animal_name VARCHAR,health VARCHAR, age VARCHAR, location VARCHAR);
+       * CREATE TABLE sightings (id SERIAL PRIMARY KEY, ranger_name VARCHAR, animal_name VARCHAR,health VARCHAR, age VARCHAR, location VARCHAR);
+       * CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;
+
 ## Behavior Driven Development(BDD)
 
 *INPUTS: -ranger's name
@@ -26,9 +34,9 @@ If you are not conversant on the usage of git you can visit https://github.com a
 
 *OUTPUTS:a table of retrieved data from database
 ## Known Bugs
-There no bugs for now but you can't add without completing all required information
+For now users cant'be able to view the list after inserting informations but they can view them in the database
 ## Technologies Used
-IntelJ IDE,BOOTSTRAP,POSTGRES
+JAVA,SPARK Framework,BOOTSTRAP,POSTGRES
 ## Support and contact details
 If countered a problem please don't hesitate to email me on dianesis17@gmail.com.
 ### License

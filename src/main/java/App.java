@@ -1,7 +1,5 @@
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
-
-import java.time.ZoneOffset;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +12,7 @@ public class App {
         if (processBuilder.environment().get("PORT") != null) {
             return Integer.parseInt(processBuilder.environment().get("PORT"));
         }
-        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+        return 4567;
     }
     public static void main(String[] args) {
 
@@ -31,10 +29,13 @@ public class App {
             return new ModelAndView(model, "form.hbs");
         },new HandlebarsTemplateEngine());
 
+        get("/form1", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            return new ModelAndView(model, "form1.hbs");
+        },new HandlebarsTemplateEngine());
+
         post("/view", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            String rangerName = request.queryParams("rangerName");
-            String sightingLocation = request.queryParams("sightingLocation");
             String animalName = request.queryParams("animalName");
             String animalAge = request.queryParams("animalAge");
             String animalHealth = request.queryParams("animalHealth");
@@ -42,30 +43,40 @@ public class App {
             if(animalType.equals("safe")){
                 Animal regularAnimal = new Animal(animalName, animalAge, animalHealth, animalType);
                 regularAnimal.save();
-                Sightings newSighting1 = new Sightings(rangerName, sightingLocation, regularAnimal.getId());
-                newSighting1.save();
-            } else if(animalType.equals("endangered")){
+            }
+            else if(animalType.equals("endangered")){
                 Endangered endangeredAnimal = new Endangered(animalName, animalAge, animalHealth, animalType);
                 endangeredAnimal.save();
-                Sightings newSighting2 = new Sightings(rangerName, sightingLocation,endangeredAnimal.getId());
-                newSighting2.save();
             }
-            List<Sightings> allSightings = Sightings.all();
             List<Animal> allAnimal= Animal.all();
-            model.put("sightings", allSightings);
-            model.put("animal", allAnimal);
+            model.put("animals", allAnimal);
             return new ModelAndView(model, "view.hbs");
         }, new HandlebarsTemplateEngine());
 
-
-
         get("/view", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            List<Sightings> allSightings = Sightings.all();
             List<Animal> allAnimal= Animal.all();
-            model.put("sightings", allSightings);
-            model.put("animal", allAnimal);
+            model.put("animals", allAnimal);
             return new ModelAndView(model, "view.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        post("/view1", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            String rangerName = request.queryParams("rangerName");
+            String sightingLocation = request.queryParams("sightingLocation");
+
+            Sightings newSighting1 = new Sightings(rangerName, sightingLocation);
+            newSighting1.save();
+            List<Sightings> allSightings = Sightings.all();
+            model.put("sightings", allSightings);
+            return new ModelAndView(model, "view1.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/view1", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<Sightings> allSightings = Sightings.all();
+            model.put("sightings", allSightings);
+            return new ModelAndView(model, "view1.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }

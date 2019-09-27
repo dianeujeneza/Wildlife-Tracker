@@ -1,0 +1,38 @@
+{{#partial "styles"}}
+    <link rel='stylesheet' href='/css/app.css'>
+{{/partial}}
+{{#partial "content"}}
+    <h1 class="header">WILDLIFE TRACKER</h1>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <form action="/view1" method="post" id="form">
+        <h2>Sightings</h2>
+        <p>“When it comes to conserving wildlife and the environment, It's more important to be outspoken, than unspoken” </p>
+        <hr>
+        <div class="form-group">
+            <label for="rangerName">Ranger's Name</label>
+            <input type="text" id="rangerName" name="rangerName">
+        </div>
+        <div class="form-group">
+            <label>Location of Sighting</label>
+            <select name="sightingLocation" id="sightingLocation">
+                <option selected>Choose..</option>
+                <option value="Zone1">North</option>
+                <option value="Zone2">South</option>
+                <option value="Zone3">East</option>
+                <option value="Zone4">West</option>
+                <option value="Zone5">Central</option>
+            </select>
+        </div>
+
+<!--        <div class="form-group">-->
+<!--            <label for="animalId">Animal Id</label>-->
+<!--            <input type="number" id="animalId" name="animalId">-->
+<!--        </div>-->
+
+        <button type="submit" class="btn btn-success" id="button">Submit</button>
+    </form>
+{{/partial}}
+{{> layout.hbs}}
